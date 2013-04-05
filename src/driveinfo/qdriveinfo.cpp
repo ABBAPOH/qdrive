@@ -83,6 +83,20 @@ void QDriveInfoPrivate::ensureCached(const QDriveInfo *q, uint flags)
 */
 
 /*!
+    \enum QDriveInfo::Capability
+    This enum describes the capabilities provided by filesystem represented by
+    QDriveInfo object.
+
+    \value SupportsSymbolicLinks Whether the filesystem supports symbolic links.
+    \value SupportsHardLinks Whether the filesystem supports hard links.
+    \value SupportsCaseSensitiveNames Whether the filesystem supports case-sensetive names.
+    \value SupportsCasePreservedNames Whether the filesystem supports case-preserved names.
+    \value SupportsJournaling Whether the filesystem supports journaling.
+    \value SupportsSparseFiles Whether the filesystem supports sparse files.
+    \value SupportsPersistentIDs Whether the filesystem supports persistent IDs.
+*/
+
+/*!
     Constructs an empty QDriveInfo object.
 
     This object is not ready for use, invalid and all its parameters are empty.
