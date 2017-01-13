@@ -1,6 +1,6 @@
 CONFIG += testcase
 TARGET = tst_qdriveinfo
-QT = core testlib driveinfo
+QT = core testlib #driveinfo
 
 SOURCES += tst_qdriveinfo.cpp
 

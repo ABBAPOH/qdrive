@@ -7,7 +7,7 @@ DEFINES *= QT_NO_CAST_FROM_BYTEARRAY QT_NO_CAST_FROM_ASCII QT_NO_CAST_TO_ASCII
 win32-msvc*|win32-icc:QMAKE_LFLAGS += /BASE:0x66000000
 solaris-cc*:QMAKE_CXXFLAGS_RELEASE -= -O2
 
-load(qt_module)
+#load(qt_module)
 
 HEADERS += qtdriveinfoglobal.h
 HEADERS += qdriveinfo.h \

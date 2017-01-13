@@ -1,1 +1,4 @@
-load(qt_parts)
+TEMPLATE = subdirs
+SUBDIRS  = examples \
+           src \
+           tests

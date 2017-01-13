@@ -44,8 +44,8 @@
 #include <QDebug>
 
 #if defined(QT_LARGEFILE_SUPPORT)
-#  define QT_STATFSBUF struct statfs64
-#  define QT_STATFS    ::statfs64
+#  define QT_STATFSBUF struct statfs
+#  define QT_STATFS    ::statfs
 #else
 #  define QT_STATFSBUF struct statfs
 #  define QT_STATFS    ::statfs
@@ -172,9 +172,10 @@ void QDriveInfoPrivate::doStat(uint requiredFlags)
 
 void QDriveInfoPrivate::getPosixInfo()
 {
+    struct statfs64 b;
     QT_STATFSBUF statfs_buf;
     // deprecated
-    int result = QT_STATFS(QFile::encodeName(rootPath).constData(), &statfs_buf);
+    int result = statfs(QFile::encodeName(rootPath).constData(), &statfs_buf);
     if (result == 0) {
         device = QByteArray(statfs_buf.f_mntfromname);
         readOnly = (statfs_buf.f_flags & MNT_RDONLY) != 0;

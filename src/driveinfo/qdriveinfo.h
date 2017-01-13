@@ -111,6 +111,7 @@ public:
 protected:
     explicit QDriveInfo(QDriveInfoPrivate &dd);
 
+private:
     QSharedDataPointer<QDriveInfoPrivate> d;
 };
 
